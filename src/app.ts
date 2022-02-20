@@ -10,6 +10,8 @@ import { router } from "./routes";
 
 
 const app = express();
+
+// cors "permite ou barra as requisições"
 app.use(cors())
 
 const serverHttp = http.createServer(app);

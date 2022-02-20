@@ -20,6 +20,7 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
     
     const { sub } = verify(token, process.env.JWT_SECRET) as IPayload
 
+    // request não consegue saber o tipo, por isso foi necessario sobrescrever o typescript
     request.user_id =  sub;
 
     return next();
